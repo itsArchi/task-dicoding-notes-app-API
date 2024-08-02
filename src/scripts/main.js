@@ -1,5 +1,8 @@
+import gsap from 'gsap';
 import { showElement, hideElement } from './animations';
-import gsap from 'gsap'; 
+import './components/NoteInput';
+import './components/AppBar';
+import './components/Footer';
 
 const main = () => {
   const baseUrl = 'https://notes-api.dicoding.dev/v2';
@@ -144,17 +147,11 @@ const main = () => {
   };
 
   document.addEventListener('DOMContentLoaded', () => {
-    const inputNoteTitle = document.querySelector('#inputNoteTitle');
-    const inputNoteBody = document.querySelector('#inputNoteBody');
-    const buttonSave = document.querySelector('#buttonSave');
+    const noteInputElement = document.querySelector('note-input');
 
-    buttonSave.addEventListener('click', function () {
-      const note = {
-        title: inputNoteTitle.value,
-        body: inputNoteBody.value,
-      };
-
-      insertNote(note);
+    noteInputElement.addEventListener('note-save', (event) => {
+      const { title, body } = event.detail;
+      insertNote({ title, body });
     });
 
     getNote();

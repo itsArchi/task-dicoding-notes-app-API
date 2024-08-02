@@ -7,57 +7,14 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-dark bg-primary">
-        <span class="navbar-brand mb-0 h1">Notes App</span>
-      </nav>
+      <app-bar></app-bar>
     </header>
     <main class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h5 class="card-title">Input Note</h5>
-            </div>
-            <div class="card-body">
-              <div class="form-group">
-                <label for="inputNoteId">Note ID</label>
-                <input
-                  id="inputNoteId"
-                  type="number"
-                  class="form-control"
-                  placeholder="Note ID"
-                />
-              </div>
-              <div class="form-group">
-                <label for="inputNoteTitle">Note Title</label>
-                <input
-                  id="inputNoteTitle"
-                  type="text"
-                  class="form-control"
-                  placeholder="Note Title"
-                />
-              </div>
-              <div class="form-group">
-                <label for="inputNoteBody">Note Body</label>
-                <input
-                  id="inputNoteBody"
-                  type="text"
-                  class="form-control"
-                  placeholder="Note Body"
-                />
-              </div>
-              <div class="form-group">
-                <button id="buttonSave" class="btn btn-success">Save</button>
-                <button id="buttonArchive" class="btn btn-primary">
-                  Archive
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <note-input></note-input> 
       <div id="loading" style="display: none">Loading...</div>
       <div id="listNote" class="row"></div>
     </main>
+    <app-footer></app-footer>
+    <script src="./path/to/main.js"></script>
   </body>
 </html>
